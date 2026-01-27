@@ -1,6 +1,6 @@
 # picoCTF Writeups
 
-This repository contains my personal writeups and solution approaches for challenges from **:contentReference[oaicite:0]{index=0}**.
+This repository contains my personal writeups and solution approaches for challenges from **PicoCTF**.
 
 The goal of these writeups is to document my learning process, problem-solving strategies, and key takeaways while practicing Capture The Flag (CTF) challenges.
 
