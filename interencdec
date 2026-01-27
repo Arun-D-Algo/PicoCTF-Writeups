@@ -1,0 +1,17 @@
+# PicoCTF
+
+## interencdec
+Can you get the real meaning from this file.
+YidkM0JxZGtwQlRYdHFhR3g2YUhsZmF6TnFlVGwzWVROclgyZzBOMm8yYXpZNWZRPT0nCg==
+
+### Solve
+**Flag:** `picoCTF{caesar_d3cr9pt3d_a47c6d69}`
+
+The given string YidkM0JxZGtwQlRYdHFhR3g2YUhsZmF6TnFlVGwzWVROclgyZzBOMm8yYXpZNWZRPT0nCg== was first identified as Base64 because it uses only Base64 characters and ends with padding ==. Decoding it once produced another Base64-looking string wrapped inside quotes, indicating layered encoding. After removing the surrounding quotes and decoding the second Base64 layer, the output became readable text but still appeared encrypted. At this stage, the text resembled a Caesar cipher, and since PicoCTF flags usually start with picoCTF, the shift was determined by comparing the first decoded letter with p, which showed a rotation of 19. Applying a Caesar shift of 19 to the text fully decrypted it into picoCTF{caesar_d3cr9pt3d_a47c6d69}, confirming the correct flag.
+
+
+### New Learnings
+This challenge demonstrated how multiple encodings can be layered together and how Base64 decoding may need to be applied repeatedly. It also reinforced using known plaintext patterns, such as the picoCTF prefix, to identify Caesar cipher shifts efficiently.
+
+### References 
+The Base64 encoding format and Caesar cipher concepts were referenced from Wikipedia, and ChatGPT and Cyberchef were used to clarify the decoding sequence and validate the decryption logic.

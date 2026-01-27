@@ -1,0 +1,18 @@
+# PicoCTF
+
+## rail-fence
+A type of transposition cipher is the rail fence cipher, which is described here. Here is one such cipher encrypted using the rail fence with 4 rails. Can you decrypt it?
+Ta _7N6DDDhlg:W3D_H3C31N__0D3ef sHR053F38N43D0F i33___NA
+Put the decoded message in the picoCTF flag format, picoCTF{decoded_message}.
+
+### Solve
+**Flag:** `picoCTF{WH3R3_D035_7H3_F3NC3_8361N_4ND_3ND_D00AFDD3}`
+
+The challenge states that the ciphertext was encrypted using a Rail Fence cipher with 4 rails, so the first step was to treat it as a transposition cipher rather than a substitution cipher. Since Rail Fence works on character positions, spaces are not part of the encryption and were removed, turning the ciphertext into Ta_7N6DDDhlg:W3D_H3C31N__0D3efsHR053F38N43D0Fi33___NA with a total length of 53 characters. For a 4-rail Rail Fence cipher, characters follow a zig-zag pattern moving down and up the rails in the order 0 → 1 → 2 → 3 → 2 → 1 → 0 repeatedly, so by mapping this pattern across 53 positions, the number of characters in each rail can be determined as 9 for rail 0, 17 for rail 1, 18 for rail 2, and 9 for rail 3. During decryption, the ciphertext is split according to these rail sizes and filled row-by-row into the rails, after which the original message is reconstructed by reading characters back following the zig-zag order. Performing this process yields the readable message The flag is: WH3R3_D035_7H3_F3NC3_8361N_4ND_3ND_D00AFDD3, which is written in leet-speak and does not require further decryption. Wrapping the decoded text in the required format gives the final flag picoCTF{WH3R3_D035_7H3_F3NC3_8361N_4ND_3ND_D00AFDD3}.
+
+
+### New Learnings
+This challenge reinforced how the Rail Fence cipher functions as a transposition cipher and how decryption is performed by reversing the zig-zag process. It also highlighted the importance of removing spaces before decryption and reconstructing the plaintext by filling rails first and reading characters in zig-zag order.
+
+### References 
+The Rail Fence Cipher explanation on Wikipedia was used to understand the zig-zag structure of the cipher, and ChatGPT was used to clarify the decryption process and confirm the correct reconstruction of the plaintext.

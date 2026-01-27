@@ -1,0 +1,14 @@
+# PicoCTF
+
+## 13
+Cryptography can be easy, do you know what ROT13 is? 
+cvpbPGS{abg_gbb_onq_bs_n_ceboyrz}
+
+
+### Solve
+**Flag:** `picoCTF{not_too_bad_of_a_problem}`
+
+Added '13' to the value of each alphabet, such that 'a' {0} becomes 'n' {13} and so on to decrypt.
+
+### New Learnings
+Learnt how to decrypt an encrypted flag, in this case, rotating it by 13 values.
