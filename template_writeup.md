@@ -1,6 +1,7 @@
-# Module Name
+# Challenge Name
+## Challenge Category
+## Challenge Difficulty
 
-## Challenge Name
 Add challenge description here
 
 ### Solve
